@@ -3,29 +3,19 @@ public class recursion {
 
 	public static void main(String[] args) {
 		
-		System.out.println(exe5(10,3));
+		System.out.println("1) " + exe1(5));
+		System.out.println("2) " + exe2(4));
+		System.out.println("3) " + exe3(3));
+		System.out.println("4) " + exe4(100));
+		System.out.println("5) " + exe5(10,3));
+		System.out.println("6) " + exe6(10,3));
+		System.out.println("7) " + exe7(10,30));
+		System.out.println("8) " + exe8(10,9));
+		System.out.println("9) " + exe9(9997));
 		
 
 	}
-	public static double f(double n)
-
-	{
-		if (n==1)
-		{
-			return 1;
-		}
-		return (n*f(n-1));
-	}
 	
-	public static double e(double n)
-	{
-		if (n==0)
-		{
-			return 1;
-		}
-		return 1/f(n) + e(n-1);
-	}
-
 	public static int exe1 (int n)
 	{
 		if (n==1)
@@ -131,14 +121,20 @@ public class recursion {
 	
 	public static boolean exe9 (int n)
 		{
-			if ( n == 0)
+			
+			if ( n < 10 )
 			{
-				return true;
+				return true;	
 			}
-			if (n%2 != 0)
+			
+			int digit = n%10;
+			int nextdigit = ((int)n/10)%10;
+			
+			if (digit % 2 != nextdigit % 2)
 			{
 				return false;
 			}
+			
 			return exe9(n/10);
 		}
 
